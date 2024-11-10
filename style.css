@@ -1,0 +1,259 @@
+/* Manrope font family */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;700&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,400;0,500;0,600;1,600&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Colors */
+:root{
+--very-dark-grayish-blue: hsl(217, 19%, 35%);
+--desaturated-dark-blue: hsl(214, 17%, 51%);
+--grayish-blue: hsl(212, 23%, 69%);
+--light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html{
+    font-size: 13px;
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-grayish-blue);
+}
+/* Main container */
+.main-container{
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    max-width: 56.15rem;
+    max-height: 21.5rem;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.76rem;
+    background-color: hsl(0, 0%, 100%);
+}
+
+/* Left part of image */
+
+.img-left img{
+    width: 21.92rem;
+    height: 21.5rem;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 0.76rem 0 0 0.76rem; /* Apply border radius directly to the image */
+}
+
+ /* Right Container */
+.right-container{
+    margin: 2.46rem 3.07rem;
+}
+.right-container h1{
+    font-weight: 700;
+    font-size: 1.54rem;
+    line-height: 1.92rem;
+    letter-spacing: 0.019rem;
+    color: var(--very-dark-grayish-blue);
+}
+.description{
+    color: var(--desaturated-dark-blue);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.53rem;
+    letter-spacing: 0.009rem;
+    margin-top: 0.92rem;
+    margin-bottom: 1.538rem;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.person{
+    display: flex; 
+    flex-direction: row;
+    gap: 1.23rem;
+}
+.person div h2{
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.53rem;
+    color: var(--very-dark-grayish-blue);
+}
+.person div p{
+    color: var(--desaturated-dark-blue);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.53rem;
+    letter-spacing: 0.009rem;
+}
+.person img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+
+
+/* Inside Share wrapper */
+.share-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.share-container{
+    position: absolute;
+    background-color: hsl(210, 15%, 51%);
+    width: 13.46rem;
+    max-height: fit-content;
+    padding: 1.38rem 2.77rem;
+    border-radius: 0.76rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: hidden; 
+    opacity: 0; 
+    bottom: calc(100% + 16px); 
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Adding triangle in the bottom of share container */
+.share-container .triangle {
+    position: absolute;
+    bottom: -0.69rem; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 0.76rem solid transparent;
+    border-right: 0.76rem solid transparent;
+    border-top: 0.76rem solid hsl(210, 15%, 51%);
+  }
+
+.share-container.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.share-button{
+    cursor: pointer;
+    height: 2.46rem; 
+    width: 2.46rem; 
+    border: none; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.share-button img {
+    width: 1.23rem;
+    height: 1.23rem;
+}
+
+button:active {
+    background-color: hsl(210, 15%, 51%); 
+}
+
+.share-container p{
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.53rem;
+    letter-spacing: 0.38rem;
+    color: var(--light-grayish-blue);
+}
+
+
+
+.share-icons{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.23rem;
+}
+
+
+
+
+
+@media (max-width: 55rem) {
+
+    body {
+        flex-direction: column;
+    }
+
+    .main-container {
+        flex-direction: column; /* Switch to column layout */
+        max-width: 25.15rem; 
+        max-height: 39.38rem;
+        border-radius: 0.77rem;
+    }
+
+    .img-left{
+        height: 15.38rem;
+    }
+
+    .img-left img {
+        width: 25.15rem;
+        height: 15.38rem;
+        border-radius: 0.76rem 0.76rem 0 0;
+    }
+
+    .right-container{
+        padding: 2.7rem 2.46rem 1rem 2.46rem;
+        margin: 0;
+    }
+
+    footer{
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .person{
+        display: flex; 
+        flex-direction: row;
+        gap: 1.23rem;
+    }
+
+    .share-container.active{
+        z-index: 10;
+    }
+    .share-button.active{
+        position: absolute;
+        z-index: 12;
+    }
+
+    .right-container h1{
+        font-size: 1.23rem;
+        line-height: 1.84rem;
+        letter-spacing: 0.015rem;
+    }
+
+    .share-container .triangle {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .share-container{
+        position: absolute;
+        top: -11px;
+        justify-content: flex-start;
+        padding-top: 1.69rem;
+        padding-bottom: 1.69rem;
+        left: -7.692rem;
+        width: 19.53rem;
+        gap: 1.61rem;
+        border-radius: 0;
+        border-radius: 0 0 0.76rem 0.76rem;
+    }
+
+    .share-button{
+        z-index: 12;
+    }
+ 
+
+}
